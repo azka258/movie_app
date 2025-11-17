@@ -12,7 +12,7 @@ class DetailPage extends StatelessWidget {
       appBar: AppBar(title: Text(movie.title)),
       body: Column(
         children: [
-          Image.network(movie.image),
+          Image.asset(movie.image),
           Padding(
             padding: EdgeInsets.all(16),
             child: Text(movie.description, style: TextStyle(fontSize: 16)),
