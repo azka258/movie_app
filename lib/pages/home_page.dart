@@ -3,19 +3,19 @@ import '../models/movie.dart';
 import 'detail_page.dart';
 
 class HomePage extends StatelessWidget {
- final List<Movie> movies = [
-  Movie(
-    title: "Avengers: Endgame",
-    image: "https://m.media-amazon.com/images/I/81ExhpBEbHL._AC_UF1000,1000_QL80_.jpg",
-    description: "Para Avengers bersatu kembali untuk mengalahkan Thanos.",
-  ),
-  Movie(
-    title: "Interstellar",
-    image: "https://m.media-amazon.com/images/I/91kFYg4fX3L._AC_UF1000,1000_QL80_.jpg",
-    description: "Petualangan ruang angkasa mencari planet baru untuk kelangsungan hidup manusia.",
-  ),
-];
-
+  final List<Movie> movies = [
+    Movie(
+      title: "Avengers: Endgame",
+      image: "assets/images/film1.jpg",
+      description: "Para Avengers bersatu kembali untuk mengalahkan Thanos.",
+    ),
+    Movie(
+      title: "Interstellar",
+      image: "assets/images/film2.jpg",
+      description:
+          "Petualangan ruang angkasa mencari planet baru untuk kelangsungan hidup manusia.",
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,12 @@ class HomePage extends StatelessWidget {
           return Card(
             margin: EdgeInsets.all(10),
             child: ListTile(
-              leading: Image.network(movies[index].image),
+              leading: Image.asset(
+                movies[index].image,
+                width: 60,
+                height: 80,
+                fit: BoxFit.cover,
+              ),
               title: Text(movies[index].title),
               subtitle: Text(movies[index].description),
               onTap: () {
